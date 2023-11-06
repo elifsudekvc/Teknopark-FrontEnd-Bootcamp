@@ -126,8 +126,11 @@ onikinciSoru();
 const onUcuncuSoru = () => {
   var isim = "tech career";
   const myArray = isim.split(" ");
-  const newArr = myArray.map((item)=>{item[0].toUpperCase() + " " + item[5].toUpperCase()})
+  const newArr = myArray.map((item) => { 
+    return item[0].toUpperCase() + item.substring(1) 
+  });
+let N=newArr.join(" ");
+   console.log(N)
 
-  console.log(`onÜçüncü soru: ${newArr}`);
 };
 onUcuncuSoru();
