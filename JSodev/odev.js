@@ -65,3 +65,69 @@ const besinciSoru = () => {
   console.log(`besinci soru Dizinin en büyük sayısı: ${enKucuk}`);
 };
 besinciSoru();
+
+//“  Çağatay Yıldız” isimli metindeki boşlukları kaldır.    (REPLACE)
+const altinciSoru = () => {
+  let isim = "    Çağatay Yıldız";
+  Bosluksuzİsim = isim.trim();
+  console.log(`altinci soru: ${Bosluksuzİsim}`);
+};
+altinciSoru();
+
+//“cagatay yildiz” kelimesindeki boşlukları temizle ve tüm harfleri büyült ( REPLACE ve UPPER)
+const yedinciSoru = () => {
+  let isim = "cagatay yildiz";
+  Yildizsizİsim = isim.replaceAll(" ", "").toUpperCase();
+  console.log(`yedinci soru: ${Yildizsizİsim}`);
+};
+yedinciSoru();
+
+//“******Çağatay Yıldız” isimli metindeki yıldızları kaldır (REPLACE)
+const sekizinciSoru = () => {
+  let isim = "******Çağatay Yıldız";
+  Yildizsizİsim = isim.replaceAll("*", "");
+  console.log(`sekizinci soru: ${Yildizsizİsim}`);
+};
+sekizinciSoru();
+
+//“Çağatay  Yıldız” metnindeki kelimeler arasında 2 boşluk var bunu bir boşluk yap (REPLACE)
+const dokuzuncuSoru = () => {
+  let isim = "Çağatay  Yıldız";
+  tekBosluk = isim.replace("  ", " ");
+  console.log(`dokuzuncu soru: ${tekBosluk}`);
+};
+dokuzuncuSoru();
+
+//“**Tech Career**” isimli metindeki yıldızları kaldır (REPLACE)
+const onuncuSoru = () => {
+  let isim = "**Tech Career**";
+  Yildizsiz = isim.replaceAll("*", "");
+  console.log(`onuncu soru: ${Yildizsiz}`);
+};
+onuncuSoru();
+
+//“Tech Career” isimli metnin soluna ve sağına 3 yıldız koy. “***Tech Career***” ( Normal toplama operatörü)
+const onbirinciSoru = () => {
+  let isim = "Tech Career";
+  Yildizli = `***${isim}***`;
+  console.log(`onbirinci soru: ${Yildizli}`);
+};
+onbirinciSoru();
+
+//“Tech Career Bilişim teknolojileri” metnindeki son kelimeyi büyült (SUBSTRING)
+const onikinciSoru = () => {
+  let isim = "Tech Career Bilişim teknolojileri";
+  SonKelime = isim.substring(20, 33).toUpperCase();
+  console.log(`onikinci soru: ${SonKelime}`);
+};
+onikinciSoru();
+
+//“Tech Career” kelimelerin ilk harflerini büyült (Substring ve upper)
+const onUcuncuSoru = () => {
+  var isim = "tech career";
+  const myArray = isim.split(" ");
+  const newArr = myArray.map((item)=>{item[0].toUpperCase() + " " + item[5].toUpperCase()})
+
+  console.log(`onÜçüncü soru: ${newArr}`);
+};
+onUcuncuSoru();
