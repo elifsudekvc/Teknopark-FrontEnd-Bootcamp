@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .buton {
+        width: 100px;
+        height: 50px;
+        background-color: rgb(157, 157, 157);
+        margin: 10px;
+        border-radius: 20px;
+      }
+      div img {
+        width: 150px;
+        height: 150px;
+        margin: 10px;
+      }
+      .resimler {
+        display: flex;
+        flex-direction: column;
+      }
+      .finish {
+        background-color: rgb(157, 157, 157);
+        width: 10px;
+        height: 620px;
+        position: fixed;
+        margin-left: 1300px;
+      }
+      .anaEkran {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="anaEkran">
+      <div class="resimler">
+        <button onclick="startButon()" class="buton">START</button>
+        <img
+          id="img1"
+          src="https://vetrehberi.com/wp-content/uploads/2021/05/arap-at-irki-ve-ozellikleri.jpg"
+          alt=""
+        />
+        <img
+          id="img2"
+          src="https://vetrehberi.com/wp-content/uploads/2018/11/akhal-teke-at-irki.jpg"
+          alt=""
+        />
+        <img
+          id="img3"
+          src="https://www.analizgazetesi.com.tr/modules/blog/dataimages/IMG_07E4C0-C62890-DABB4C-AC4AFF-B1E0ED-7E93CA.jpg"
+          alt=""
+        />
+      </div>
+      <div class="finish"></div>
+    </div>
+  </body>
+  <script>
+    var a = 0;
+    var b = 0;
+    var c = 0;
+    function startButon() {
+      setInterval(() => {
+        var x = Math.floor(Math.random() * 100);
+        var y = Math.floor(Math.random() * 100);
+        var z = Math.floor(Math.random() * 100);
+
+        a += x;
+        b += y;
+        c += z;
+
+        document.querySelector("#img1").style.marginLeft = a + "px";
+        document.querySelector("#img2").style.marginLeft = b + "px";
+        document.querySelector("#img3").style.marginLeft = c + "px";
+
+        if (a > 1250) {
+          alert("1. geldi");
+          return;
+        } else if (b > 1250) {
+          alert("2. geldi");
+          return;
+        } else if (c > 1250) {
+          alert("3. geldi");
+          return;
+        }
+      }, 500);
+    }
+  </script>
+</html>

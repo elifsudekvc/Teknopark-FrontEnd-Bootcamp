@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .slidebar {
+        display: flex;
+        justify-content: center;
+      }
+      img {
+        width: 35rem;
+        height: 35rem;
+        margin-top: 20px;
+      }
+      .buton {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+      }
+      button {
+        margin: 20px;
+        width: 90px;
+        height: 40px;
+        background-color: rgb(151, 181, 238);
+        border-style: none;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slidebar">
+      <img name="slide"/>
+    </div>
+    <div class="buton">
+      <button onclick="prev()">Geri</button>
+      <button onclick="next()">İleri</button>
+    </div>
+    <script>
+      var i = 0;
+      var images = [
+        "https://images.pexels.com/photos/4190513/pexels-photo-4190513.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/3876401/pexels-photo-3876401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/4254562/pexels-photo-4254562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      ];
+      var duration = 2000;
+      function changeImage() {
+        document.slide.src = images[i];
+        if (i < images.length - 1) {
+          i++;
+        } else {
+          i = 0;
+        }
+        setTimeout("changeImage()", duration);
+      }
+      window.onload = changeImage;
+
+      function next() {
+        document.slide.src = images[i];
+        if (i < images.length - 1) {
+            i++;
+        } else {
+            i = 0;
+        }
+    }
+
+    function prev() {
+        document.slide.src = images[i];
+        if (i > 0) {
+            i--;
+        } else {
+            i = images.length - 1;
+        }
+    }
+
+    </script>
+  </body>
+</html>

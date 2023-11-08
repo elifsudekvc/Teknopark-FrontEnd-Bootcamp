@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      label {
+        margin: 10px;
+      }
+      .input {
+        display: flex;
+        justify-content: center;
+      }
+      button {
+        width: 100px;
+        margin: 20px;
+      }
+      .borders {
+        display: flex;
+        justify-content: center;
+      }
+      #sonuc {
+        width: 300px;
+        height: 30px;
+        margin-left: 600px;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="input">
+      <label for="number1">birinci sayı:</label>
+      <input type="text" id="number1" name="number1" /><br /><br />
+      <label for="number2">ikinci sayı:</label>
+      <input type="text" id="number2" name="number2" /><br /><br />
+    </div>
+    <div class="borders">
+      <button onclick="topla()">TOPLA</button>
+      <button onclick="cikar()">ÇIKAR</button>
+      <button onclick="carp()">ÇARP</button>
+      <button onclick="bol()">BÖL</button>
+      <button onclick="karekök()">KAREKÖK</button>
+    </div>
+    <div id="sonuc">SONUÇ:</div>
+  </body>
+  <script>
+    const number1 = document.querySelector('#number1');
+    const number2 = document.querySelector('#number2');
+    const sonuc = document.querySelector('#sonuc');
+    function topla() {
+      sonuc.innerHTML =(`SONUÇ: ${Number(number1.value) + Number(number2.value)}`);
+      number1.value="";
+      number2.value="";
+    }
+    function cikar() {
+      sonuc.innerHTML =(`SONUÇ: ${Number(number1.value) - Number(number2.value)}`);
+      number1.value="";
+      number2.value="";
+    }
+    function carp() {
+      sonuc.innerHTML =(`SONUÇ: ${Number(number1.value) * Number(number2.value)}`);
+      number1.value="";
+      number2.value="";
+    }
+    function bol() {
+      sonuc.innerHTML =(`SONUÇ: ${Number(number1.value) / Number(number2.value)}`);
+      number1.value="";
+      number2.value="";
+    }
+    function karekök() {
+      sonuc.innerHTML = (`SONUÇ: ${Math.sqrt( Number(number1.value)).toFixed(3)}`);
+      number1.value="";
+      number2.value="";
+    }
+
+  </script>
+</html>
