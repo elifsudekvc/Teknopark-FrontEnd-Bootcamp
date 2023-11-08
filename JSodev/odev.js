@@ -130,7 +130,7 @@ const onUcuncuSoru = () => {
     return item[0].toUpperCase() + item.substring(1) 
   });
 let N=newArr.join(" ");
-   console.log(N)
+   console.log(`onücüncü soru: ${N}`)
 
 };
 onUcuncuSoru();
