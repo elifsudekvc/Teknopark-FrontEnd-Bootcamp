@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <label for="">Number:</label>
+      <div id="number"></div>
+    </div>
+    <div>
+      <button id="buton" onclick="add()">Add</button>
+    </div>
+    <ul></ul>
+  </body>
+  <script>
+          var randomNumbers = [];
+    function add() {
+
+      var number = document.getElementById("number").value;
+      var random = Math.floor(Math.random() * 100);
+
+        if(randomNumbers>15){
+            return alert("15ten fazla oluşturulmaz");
+        }
+
+      for (i = 0; i < 16; i++) {
+        if (!randomNumbers.includes(random)) {
+          randomNumbers.push(random);
+        }
+      }
+      var li = document.createElement("li");
+      li.innerHTML = random;
+
+      document.querySelector("ul").appendChild(li);
+      document.getElementById("number").value = "";
+    }
+  </script>
+</html>

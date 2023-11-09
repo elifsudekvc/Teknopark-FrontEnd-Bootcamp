@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">Name:</label>
+        <input type="text" id="name">
+    </div>
+    <div>
+        <label for="">Surname:</label>
+        <input type="text" id="surname">
+    </div>
+    <div>
+        <button id="buton" onclick="add()">Add</button>
+    </div>
+        <ul>
+
+        </ul>
+</body>
+
+<script>
+    function add(){
+    var name = document.getElementById("name").value;
+    var surname = document.getElementById("surname").value;
+    var buton=document.getElementById("buton");
+
+    if (name.trim()==""&& surname.trim()==""){
+        return;
+    }
+    
+    var li=document.createElement("li");
+    li.innerHTML = name.toUpperCase()+ " " + surname.toUpperCase();
+
+    
+    document.querySelector("ul").appendChild(li);
+    document.getElementById("name").value="";
+    document.getElementById("surname").value="";
+    }
+
+</script>
+</html>
