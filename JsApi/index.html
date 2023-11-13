@@ -14,6 +14,7 @@
 <script>
 
     getProducts=()=>{
+        document.querySelector("ul").innerHTML="";
         axios.get('https://northwind.vercel.app/api/products')
         .then(res =>{
             res.data.forEach((element)=>{
