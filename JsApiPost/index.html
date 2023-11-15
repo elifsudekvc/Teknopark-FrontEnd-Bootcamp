@@ -39,7 +39,9 @@
         stock <= 0 ||
         UnitPrice.trim() == "" ||
         stock.trim() == "" ||
-        name.trim() == ""
+        name.trim() == "" ||
+        isNaN(UnitPrice) ||
+        isNaN(stock)
         
       ) {
         alert("Lütfen bir değer giriniz.");
@@ -47,13 +49,16 @@
         var newCategory = {
           name,
           UnitPrice,
-          stock,
+          stock
         };
         axios
           .post("https://northwind.vercel.app/api/categories", newCategory)
           .then((res) => {
             console.log("başarılı");
           });
+          document.getElementById("name").value="";
+          document.getElementById("UnitPrice").value="";
+          document.getElementById("stock").value="";
       }
     };
   </script>
